@@ -1,0 +1,473 @@
+/* global */
+
+html{
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:white;
+    color: black;
+}
+
+  * {
+    /*make the background image fit the entire web page*/
+    margin: 0;
+    padding: 0;
+  }
+
+body{ /*for the whole page*/
+    background:url(image/Matcha-team-bg.png) no-repeat;
+    /*background-size: contain;
+    /*background-repeat: no-repeat; */
+    /*height: 100pvh;*/
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+a{
+    /*color: rgb(241, 206, 11); styling of all the links*/
+    font-weight: bolder;
+    text-decoration: none;/*remove the underline from the links*/;
+
+}
+h1{ /*heading tag*/
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+/*home.html*/
+.container{
+    margin: 20px;
+}
+.subforum{
+    margin-top: 20px;
+}
+
+.subforum-title{
+    background-color: #FFD966;/*what's happening*/
+    padding: 5px;
+    border-radius: 5px; /*the corners*/
+    margin: 4px;
+    font-style: italic;
+}
+.subforum-description * /*select all items*/{
+    margin-block: 5px;/*make the text box smaller, fit the text more*/
+}
+.subforum-row{
+    display: grid;
+    grid-template-columns: 5% 65% 10% 20%;/*the grid below the "General Information"*/
+}
+.subforum-column{ /*stylings to the columns*/
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid #F4B183;
+    box-shadow: 1px 2px 3px #DFA67B;
+}
+
+.center{ /*center the elements inside columns horizontally and vertically*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subforum-icon i{ /*change the size of icon*/
+    font-size: 25px;
+    ;
+}
+
+/*make it more fit for smartphones*/
+@media screen and (max-width:460px){
+    .container{
+        margin: 10px;
+        padding: 10px;
+    }
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 25% 75%;/*the grid below the "General Information"*/
+        grid-template-rows: 65% 35%;
+    }
+    .subforum-stats{
+        font-size: 12px;
+    }
+}
+/*make it more fit for the tablets*/
+@media screen and (min-width: 460px) and (max-width: 1024px){
+    .container{
+        margin: 15px;
+        padding: 15px;
+    }
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+    .subforum-icon i{
+        font-size: 35px;
+    }
+
+    html{ /*increase font size of text*/
+        font-size: 16px;
+    }
+    h1{
+        font-size: 18px;
+    }
+}
+
+/*NAV BAR*/
+header{
+    margin-inline: 10px; /*add some space on both sides*/
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.navigation{
+    background-color: pink;
+    padding: 10px;
+    width: 65%; /*100% of that whole bar*/
+    display: inline-block;
+    border-radius: 5px;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.nav-list{
+    list-style-type: none; /*remove bullet points*/
+    overflow: hidden;
+    display: flex; /*make the detail, posts, home better organied*/
+    justify-content: space-around;
+    
+}
+
+.nav-item a{
+    float: right;
+    display: block;
+    text-align: center;
+    margin-inline: 20px;
+    padding: 10px;
+    color: white;
+}
+
+.nav-item a:hover{
+    opacity: 0.5;
+}
+
+.close-icon{
+    font-size: 30px;
+    float: left;
+    cursor: pointer;
+    color: white;
+}
+
+.hide{ /*hide the navigation bar*/
+    display: none; 
+}
+
+.bar-icon{
+    font-size: 40px;
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/*@font-face {
+    font-family:'Rubik', sans-serif;
+    src:url(<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik&display=swap" rel="stylesheet">)
+}*/
+
+.brand{
+    font-size: 40px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #F4B183;
+    font-weight: bolder;
+}
+
+.brand:hover{
+  opacity: 0;
+}
+
+/*NAV BAR for smartphones*/
+@media screen and (max-width: 460px){
+    .navigation{
+        max-height: auto;
+    }
+    
+    .nav-item a{
+        float: left;
+        display: inline;
+        text-align: center;
+        margin-inline: 3px;
+        font-size: 10px;
+        padding: 5px;
+    }
+    
+    .close-icon{
+        font-size: 30px;
+    }
+    
+    .brand{
+        font-size: 20px;
+    }
+}
+
+/*SEARCH BOX*/
+.search-box{
+    border:solid 1px #BDCDD6;
+    background-color: #BDCDD6;
+    margin-top: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px 7px #4c7890;
+    border-radius: 60px;
+}
+.search-box select{
+    padding: 10px;
+    border-radius: 60px;
+    border-color: #4c7890;
+    border-width: medium;
+    border-style:solid;
+    width: 350px;
+    height: 55px;
+}
+
+.search-box input{
+    padding: 10px;
+    border-radius: 60px;
+    border-color: #4c7890;
+    border-width: medium;
+    border-style:solid;
+    width: 500px;
+    height: 30.6px;
+}
+
+.search-box button{
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-color: #4c7890;
+    border-width: medium;
+    border-style:solid;
+    border-radius: 60px;
+    width: 45px;
+    height: 45px;
+
+}
+
+.search-box button:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 1px 2px 3px white;
+}
+
+/*search box for smartphones*/
+@media screen and (max-width: 460px){
+    .search-box input, .search-box button, .search-box select{
+        min-width: 300px;
+        margin-top: 5px;
+    }
+}
+
+/*Forum Info*/
+.forum-info{
+    background-color: #FFD966;
+    padding: 10px;
+    border-radius: 5px; /*the corners*/
+    margin: 22px;
+}
+
+.chart{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*Footer*/
+footer{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #93BFCF;
+    display: block ;
+    text-align: center;
+}
+
+/*#################################*/
+/* posts.html*/
+.table-head{
+    display: flex;
+}
+.table-head div{
+    padding: 5px;
+    background-color: #FFD966;
+    font-weight: bold;
+    border-radius: 5px; /*the corners*/
+    margin: 4px;
+    font-style: italic;
+}
+
+.table-head .status{
+    flex: 5%;
+}
+.table-head .subjects{
+    flex: 70%;
+}
+.table-head .replies{
+    flex: 10%;
+}
+.table-head .last-reply{
+    flex: 15%;
+}
+
+/*table body*/
+.table-row{
+    display: flex;
+}
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
+    margin: 4px;
+    background-color: white;
+    border: 2px solid #F4B183;
+    box-shadow: 1px 2px 3px #DFA67B;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.table-row .status{
+    flex: 3.5%;
+    font-size: 30px;
+    text-align: center;
+}
+.table-row .subjects{
+    flex: 73.5%;
+}
+.table-row .replies{
+    flex: 9%;
+}
+.table-row .last-reply{
+    flex: 14%;
+}
+
+/*Pagination*/
+.pagination{
+    padding: 20px;
+    font-size: 15px;
+}
+.pagination a{
+    color: white;
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border: solid white 0.5px;
+}
+
+.pagination a:hover{
+    opacity: 0.5;
+}
+
+/*Navigation*/
+.navigate{
+    margin-block: 20px;
+    font-weight: lighter;
+    font-size: 20px;
+    color: white;
+}
+
+.navigate a{
+    color: #F4B183;
+}
+
+.navigate a:hover{
+    opacity: 0.7;
+    font-weight: bolder;
+}
+
+/*Note
+.note{
+    background-color: #111314;
+    padding: 20px;
+    display: block;
+}
+
+.note span{
+    font-size: 10px;
+    margin-block: 5px;
+}
+*/
+
+/*###########################################*/
+.head{
+    display: flex;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #FFD966;
+    padding: 5px;
+    border-radius: 5px; /*the corners*/
+    margin: 4px;
+    font-style: italic;
+}
+
+.author{
+    flex: 20%;
+}
+
+.content{
+    flex: 80%;
+}
+
+.body{
+    display: flex;
+    padding: 10px;
+    margin-top: 5px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid #F4B183;
+    box-shadow: 1px 2px 3px #DFA67B;
+}
+
+.body .author .username{
+    font-size: 20px;
+}
+.body .author img{
+    max-width: 50px;
+    max-height: 80px;
+}
+.body .author .nextusername{
+      font-size: 20px;
+}
+.body .content .comment button{
+    border: solid black 1px;;
+    padding: 10px;
+    /*font-weight: bolder;*/
+    box-shadow: 4px 6px white;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+}
+/*comment*/
+.comment-area{
+    margin-top: 50px;
+}
+.comment-area textarea{
+    width: 98%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+    border-radius: 10px;
+}
+.comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.comment-area input:hover{
+    border: solid black 1px;
+}
+
+.comment-containter{
+    margin-top: 50px;
+}
